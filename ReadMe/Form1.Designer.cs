@@ -35,11 +35,13 @@
             label1 = new Label();
             listBox1 = new ListBox();
             SearchButton = new Button();
+            TitleTextBox = new TextBox();
+            lblTitle = new Label();
             SuspendLayout();
             // 
             // MoodTextBox
             // 
-            MoodTextBox.Location = new Point(26, 32);
+            MoodTextBox.Location = new Point(238, 32);
             MoodTextBox.Name = "MoodTextBox";
             MoodTextBox.Size = new Size(100, 23);
             MoodTextBox.TabIndex = 0;
@@ -54,7 +56,7 @@
             // lblBookkMood
             // 
             lblBookkMood.AutoSize = true;
-            lblBookkMood.Location = new Point(26, 14);
+            lblBookkMood.Location = new Point(238, 14);
             lblBookkMood.Name = "lblBookkMood";
             lblBookkMood.Size = new Size(42, 15);
             lblBookkMood.TabIndex = 1;
@@ -77,6 +79,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(743, 349);
             listBox1.TabIndex = 2;
+            listBox1.DoubleClick += listBox1_DoubleClick;
             // 
             // SearchButton
             // 
@@ -88,6 +91,22 @@
             SearchButton.UseVisualStyleBackColor = true;
             SearchButton.Click += SearchButton_Click;
             // 
+            // TitleTextBox
+            // 
+            TitleTextBox.Location = new Point(26, 32);
+            TitleTextBox.Name = "TitleTextBox";
+            TitleTextBox.Size = new Size(100, 23);
+            TitleTextBox.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(26, 14);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(32, 15);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Title:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -95,7 +114,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(SearchButton);
             Controls.Add(listBox1);
+            Controls.Add(lblTitle);
             Controls.Add(label1);
+            Controls.Add(TitleTextBox);
             Controls.Add(lblBookkMood);
             Controls.Add(GenreTextBox);
             Controls.Add(MoodTextBox);
@@ -116,5 +137,7 @@
         private Label label1;
         private ListBox listBox1;
         private Button SearchButton;
+        private TextBox TitleTextBox;
+        private Label lblTitle;
     }
 }
