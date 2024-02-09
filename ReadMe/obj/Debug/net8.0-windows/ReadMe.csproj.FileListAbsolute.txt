@@ -17,3 +17,4 @@ C:\Users\Giovanni\Desktop\Repositories\ReadMe\ReadMe\obj\Debug\net8.0-windows\re
 C:\Users\Giovanni\Desktop\Repositories\ReadMe\ReadMe\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\Giovanni\Desktop\Repositories\ReadMe\ReadMe\obj\Debug\net8.0-windows\ReadMe.csproj.AssemblyReference.cache
 C:\Users\Giovanni\Desktop\Repositories\ReadMe\ReadMe\obj\Debug\net8.0-windows\ReadMe.csproj.CopyComplete
+C:\Users\Giovanni\Desktop\Repositories\ReadMe\ReadMe\obj\Debug\net8.0-windows\ReadMe.sourcelink.json

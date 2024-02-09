@@ -20,14 +20,21 @@ namespace ReadMe
         {
             listBox1.Items.Clear();
 
-            string genre = GenreTextBox.Text;
-            string mood = MoodTextBox.Text;
+            if (GenreTextBox.Text.Length > 0 || MoodTextBox.Text.Length > 0)
+            {
+                string genre = GenreTextBox.Text;
+                string mood = MoodTextBox.Text;
 
-            var recommendationService = new BookRecommendationService(apiKey);
-            string result = await recommendationService.GetBookRecommendations(genre, mood);
+                var recommendationService = new BookRecommendationService(apiKey);
+                string result = await recommendationService.GetBookRecommendations(genre, mood);
 
-            // Process and display the result in your UI
-            DisplayResults(result);
+                // Process and display the result in your UI
+                DisplayResults(result);
+            }
+            else
+            {
+                MessageBox.Show("\"Mood\" e \"Genere\" sono vuoti!", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DisplayResults(string result)
@@ -36,9 +43,16 @@ namespace ReadMe
             {
                 var books = JsonConvert.DeserializeObject<BookList>(result);
 
-                foreach (var book in books.Items)
+                if (books.Items != null)
                 {
-                    listBox1.Items.Add($"{book.VolumeInfo.Title} by {string.Join(", ", book.VolumeInfo.Authors)}");
+                    foreach (var book in books.Items)
+                    {
+                        listBox1.Items.Add($"{book.VolumeInfo.Title} by {string.Join(", ", book.VolumeInfo.Authors)}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nessun risultato trovato!", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
